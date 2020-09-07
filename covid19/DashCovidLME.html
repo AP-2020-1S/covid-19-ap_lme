@@ -23,11 +23,26 @@
 
         nav1 {
           float: left;
-          width: 20%;
-          height: 150px;
-          background-color: White;
+          width: 13%;
+          height: 120px;
+          background-color: GhostWhite;
           padding: 20px;
         }
+       
+        section {
+          float: left;
+           widht:750px;
+           height:450px;
+           background-color: white;
+        }
+
+        aside { 
+            float: right;
+            widht: 185px; 
+            height: 400px;
+            background-color: white; 
+        }
+        
 
         .seltext {
             font-weight: bold;
@@ -43,27 +58,14 @@
 
 </head>
 <body>
-<h1 align="center"><strong><FONT COLOR="Black">Casos confirmados de COVID-19 en Colombia</FONT></strong></h1>
+<h1 align="center"><strong><FONT COLOR="MidnightBlue">Casos de COVID-19 en Colombia</FONT></strong></h1>
 <div class="container">
-    <div class="row">
+    <div class="row">             
         <div class="col-sm">
             <div class="card">
                 <div class="card-body">
-                    Infectados: <strong><span id="connected_users">0</span></strong>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card">
-                <div class="card-body">
-                    Recuperados: <strong><span id="daily_revenue">0</span></strong>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm">
-            <div class="card">
-                <div class="card-body">
-                    Muertos: <strong><span id="daily_revenue2">0</span></strong>
+                  <h5 align="center"><FONT COLOR="Gray">Tendencia de pacientes confirmados, activos, recuperados y fallecidos por COVID-19 en Colombia y pronóstico de sucesos con modelo SIRM.</FONT></h5>
+                  <h6 align="center"><FONT COLOR="Gray">Fuente de datos: https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr/data</FONT></h6>
                 </div>
             </div>
         </div>
@@ -73,7 +75,7 @@
 </header>
   <hr>
     <nav1 style="border:1px solid Gainsboro; border-width:2px;">
-      <p class="seltext">Ciudad:</p><style="width:110px">
+      <p class="seltext">Zona:</p><style="width:110px">
       <select id="region" name="region"  onchange="selectPlot()">
         <option value="casos_Colombia">Colombia</option>
         <option value="casos_Medellin">Medellín</option>
@@ -84,25 +86,109 @@
       </select>
       
     </nav1>
-
+<section>
     <div>
-      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/casos_Colombia.png"   alt="casos_Colombia">   </div>
-      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/casos_Medellin.png"   alt="casos_Medellin">   </div>
-      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/casos_Bogota D.C..png"     alt="casos_Bogota D.C.">     </div>
-      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/casos_Cali.png"   alt="casos_Cali">   </div>
-      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/casos_Cartagena de Indias.png"  alt="casos_Cartagena de Indias">  </div>
-      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/casos_Barranquilla.png"   alt="casos_Barranquilla">   </div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/resumen_Colombia.png"  width="500" height="430"  alt="resumen_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/resumen_Medellin.png"  width="500" height="430"  alt="resumen_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/resumen_Bogota DC.png"  width="500" height="430"   alt="resumen_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/resumen_Cali.png"  width="500" height="430"  alt="resumen_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/resumen_Cartagena de Indias.png"  width="500" height="430"  alt="resumen_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/resumen_Barranquilla.png"  width="500" height="430"  alt="resumen_Barranquilla">   </div>      
     </div>
-  
     <div>
-      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/edad_Colombia.png"   alt="edad_Colombia">   </div>
-      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/edad_Medellin.png"   alt="edad_Medellin">   </div>
-      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/edad_Bogota D.C..png"    alt="edad_Bogota D.C.">     </div>
-      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/edad_Cali.png"   alt="edad_Cali">   </div>
-      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/edad_Cartagena de Indias.png"    alt="edad_Cartagena de Indias">  </div>
-      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/edad_Barranquilla.png"    alt="edad_Barranquilla">   </div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron15_infectados_last_param_Colombia.png"   alt="pron15_infectados_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron15_infectados_last_param_Medellin.png"   alt="pron15_infectados_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron15_infectados_last_param_Bogota DC.png"     alt="pron15_infectados_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron15_infectados_last_param_Cali.png"   alt="pron15_infectados_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron15_infectados_last_param_Cartagena de Indias.png"  alt="pron15_infectados_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron15_infectados_last_param_Barranquilla.png"   alt="pron15_infectados_last_param_Barranquilla">   </div>      
     </div>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron15_activos_last_param_Colombia.png"   alt="pron15_activos_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron15_activos_last_param_Medellin.png"   alt="pron15_activos_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron15_activos_last_param_Bogota DC.png"     alt="pron15_activos_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron15_activos_last_param_Cali.png"   alt="pron15_activos_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron15_activos_last_param_Cartagena de Indias.png"  alt="pron15_activos_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron15_activos_last_param_Barranquilla.png"   alt="pron15_activos_last_param_Barranquilla">   </div>
+    </div>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron15_recuperados_last_param_Colombia.png"   alt="pron15_recuperados_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron15_recuperados_last_param_Medellin.png"   alt="pron15_recuperados_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron15_recuperados_last_param_Bogota DC.png"     alt="pron15_recuperados_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron15_recuperados_last_param_Cali.png"   alt="pron15_recuperados_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron15_recuperados_last_param_Cartagena de Indias.png"  alt="pron15_recuperados_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron15_recuperados_last_param_Barranquilla.png"   alt="pron15_recuperados_last_param_Barranquilla">   </div>
+    </div>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron15_fallecidos_last_param_Colombia.png"   alt="pron15_fallecidos_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron15_fallecidos_last_param_Medellin.png"   alt="pron15_fallecidos_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron15_fallecidos_last_param_Bogota DC.png"    alt="pron15_fallecidos_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron15_fallecidos_last_param_Cali.png"   alt="pron15_fallecidos_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron15_fallecidos_last_param_Cartagena de Indias.png"    alt="pron15_fallecidos_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron15_fallecidos_last_param_Barranquilla.png"    alt="pron15_fallecidos_last_param_Barranquilla">   </div>
+    </div>
+    <div>
+      <p><center><strong>Detalle de escenarios evaluados para pronóstico a corto plazo</strong></center></p>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/table_resumne_pronostico_15.png"  width="630" height="560"  alt="table_resumne_pronostico_15">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/table_resumne_pronostico_15.png"  width="630" height="560"  alt="table_resumne_pronostico_15">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/table_resumne_pronostico_15.png"  width="630" height="560"   alt="table_resumne_pronostico_15">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/table_resumne_pronostico_15.png"  width="630" height="560"  alt="table_resumne_pronostico_15">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/table_resumne_pronostico_15.png"  width="630" height="560"   alt="table_resumne_pronostico_15">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/table_resumne_pronostico_15.png"   width="630" height="560"  alt="table_resumne_pronostico_15">   </div>
+    </div>
+</section>
 
+<aside>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/curva_casos_infectadosinfectados_Colombia.png"   alt="curva_casos_infectadosinfectados_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/curva_casos_infectadosinfectados_Medellin.png"   alt="curva_casos_infectadosinfectados_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/curva_casos_infectadosinfectados_Bogota DC.png"    alt="curva_casos_infectadosinfectados_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/curva_casos_infectadosinfectados_Cali.png"   alt="curva_casos_infectadosinfectados_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/curva_casos_infectadosinfectados_Cartagena de Indias.png"    alt="curva_casos_infectadosinfectados_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/curva_casos_infectadosinfectados_Barranquilla.png"    alt="curva_casos_infectadosinfectados_Barranquilla">   </div>
+    </div>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron30_infectados_last_param_Colombia.png"   alt="pron30_infectados_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron30_infectados_last_param_Medellin.png"   alt="pron30_infectados_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron30_infectados_last_param_Bogota DC.png"    alt="pron30_infectados_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron30_infectados_last_param_Cali.png"   alt="pron30_infectados_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron30_infectados_last_param_Cartagena de Indias.png"    alt="pron30_infectados_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron30_infectados_last_param_Barranquilla.png"    alt="pron30_infectados_last_param_Barranquilla">   </div>
+    </div>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron30_activos_last_param_Colombia.png"   alt="pron30_activos_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron30_activos_last_param_Medellin.png"   alt="pron30_activos_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron30_activos_last_param_Bogota DC.png"     alt="pron30_activos_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron30_activos_last_param_Cali.png"   alt="pron30_activos_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron30_activos_last_param_Cartagena de Indias.png"  alt="pron30_activos_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron30_activos_last_param_Barranquilla.png"   alt="pron30_activos_last_param_Barranquilla">   </div>
+    </div>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron30_recuperados_last_param_Colombia.png"   alt="pron30_recuperados_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron30_recuperados_last_param_Medellin.png"   alt="pron30_recuperados_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron30_recuperados_last_param_Bogota DC.png"     alt="pron30_recuperados_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron30_recuperados_last_param_Cali.png"   alt="pron30_recuperados_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron30_recuperados_last_param_Cartagena de Indias.png"  alt="pron30_recuperados_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron30_recuperados_last_param_Barranquilla.png"   alt="pron30_recuperados_last_param_Barranquilla">   </div>
+    </div>
+    <div>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/pron30_fallecidos_last_param_Colombia.png"   alt="pron30_fallecidos_last_param_Colombia">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/pron30_fallecidos_last_param_Medellin.png"   alt="pron30_fallecidos_last_param_Medellin">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/pron30_fallecidos_last_param_Bogota DC.png"    alt="pron30_fallecidos_last_param_Bogota DC">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/pron30_fallecidos_last_param_Cali.png"   alt="pron30_fallecidos_last_param_Cali">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/pron30_fallecidos_last_param_Cartagena de Indias.png"    alt="pron30_fallecidos_last_param_Cartagena de Indias">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/pron30_fallecidos_last_param_Barranquilla.png"    alt="pron30_fallecidos_last_param_Barranquilla">   </div>
+    </div>
+    <div>
+      <p><center><strong>Detalle de escenarios evaluados para pronóstico a mediano plazo</strong></center></p>
+      <div class="myImage" id="casos_Colombia"   style="display:block"> <img src="figs/table_resumne_pronostico_30.png" width="630" height="560"  alt="table_resumne_pronostico_30">   </div>
+      <div class="myImage" id="casos_Medellin"   style="display:none">  <img src="figs/table_resumne_pronostico_30.png"  width="630" height="560"  alt="table_resumne_pronostico_30">   </div>
+      <div class="myImage" id="casos_Bogota D.C."     style="display:none">  <img src="figs/table_resumne_pronostico_30.png"  width="630" height="560"   alt="table_resumne_pronostico_30">     </div>
+      <div class="myImage" id="casos_Cali"   style="display:none">  <img src="figs/table_resumne_pronostico_30.png"   alt="table_resumne_pronostico_30">   </div>
+      <div class="myImage" id="casos_Cartagena de Indias"  style="display:none">  <img src="figs/table_resumne_pronostico_30.png"   width="630" height="560"  alt="table_resumne_pronostico_30">  </div>
+      <div class="myImage" id="casos_Barranquilla"   style="display:none">  <img src="figs/table_resumne_pronostico_30.png"  width="630" height="560"   alt="table_resumne_pronostico_30">   </div>
+    </div>
+</aside>
 
     <script>
       function selectPlot() {
@@ -117,12 +203,6 @@
         }
       }
     </script>
-  <hr>
-  <footer>
-    <strong>Fuente de datos</strong>
-    <ul>
-      <li>https://www.datos.gov.co/Salud-y-Protecci-n-Social/Casos-positivos-de-COVID-19-en-Colombia/gt2j-8ykr/data</li>
-    </ul>
-  </footer>
+  
 </body>
 </html>
